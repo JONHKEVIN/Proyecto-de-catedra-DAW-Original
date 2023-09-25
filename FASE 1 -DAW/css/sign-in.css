@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 250px;
+  padding: 1rem;
+}
+
+
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Contenedor flex para alinear texto y recuadro horizontalmente */
+.form-signin .form-floating {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea elementos horizontalmente en el centro */
+}
+
+

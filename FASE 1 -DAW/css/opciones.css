@@ -1,0 +1,31 @@
+html
+* {
+    margin: 30px;
+    border-radius: 10PX;
+    
+    
+  
+}
+
+H1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}
+button {
+    border-radius: 25PX;
+    height: 70px;
+    width: 100px;
+    font-style: oblique;
+    margin-left:5px;
+    padding: 5px;
+    
+}
+
+button.mover {
+    margin-left: 850px;
+}
+
+div.container {
+    background-color: rgb(245, 122, 7)
+
+}

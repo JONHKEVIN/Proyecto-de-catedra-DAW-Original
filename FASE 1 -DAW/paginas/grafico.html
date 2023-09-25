@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gráfico</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../img/150px-Pokémon_Bank_logo.png" alt="Bootstrap" width="160" height="150">
+          </a>
+          <h6>Nombre: <label for="text">Juan Jose Garcia Martinez</label></H6>
+          <br>
+           <H6>Cuenta: <label for="text">000000</label> </H6>
+           
+           <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="acciones.html"><button type="button" class="btn btn-primary">ACEPTAR</button></a>
+            <a href="acciones.html"><button type="button" class="btn btn-primary">CANCELAR</button></a>
+            <a href="../Index.html"><button type="button" class="btn btn-primary">SALIR</button></a>
+          </div>
+    </nav>
+        <style>
+        .navbar {
+            background-color: rgb(245, 122, 7) !important;
+            }
+        </style>
+        </div>
+        <div class="container-fluid">
+            <div class="row bg-dark text-white text-center py-6">
+                <div class="col">
+                    <span style="font-size: 50px;">Resumen de tus transacciones mensuales</span>
+                </div>
+            </div>
+            <div style="width: 70%; margin: 0 auto;">
+            <canvas id="grafico" width="300" height="150"></canvas>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+            <script>
+                var datos = {
+                    labels: ['Depósitos', 'Retiros', 'Pagos', 'Consultas de saldo'],
+                    datasets: [{
+                        label: 'Transacciones por Tipo',
+                        data: [15, 25, 10, 30],
+                        backgroundColor: [
+                            'rgba(0, 0, 255, 0.2)',
+                            'rgba(255, 255, 0, 0.2)',
+                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 128, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 0, 139, 1)',
+                            'rgba(128, 128, 0, 1)',
+                            'rgba(139, 0, 0, 1)',
+                            'rgba(0, 100, 0, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+                
+                // Configuración del gráfico
+                var opciones = {
+                    scales: {
+                        xAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Tipo de Transacciones',
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Número de Transacciones',
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                };
+                
+                // Crear el gráfico
+                var ctx = document.getElementById('grafico').getContext('2d');
+                var miGrafico = new Chart(ctx, {
+                    type: 'bar',
+                    data: datos,
+                    options: opciones
+                });
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
